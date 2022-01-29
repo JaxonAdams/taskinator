@@ -45,6 +45,9 @@ var createTaskEl = function(taskDataObj) {
 
     listItemEl.appendChild(taskInfoEl);
 
+    var taskActionsEl = createTaskActions(taskIdCounter);
+    listItemEl.appendChild(taskActionsEl);
+
     // Add entire list item to list
     tasksToDoEl.appendChild(listItemEl);
 
@@ -79,7 +82,20 @@ var createTaskActions = function(taskId) {
     statusSelectEl.setAttribute("name", "status-change");
     statusSelectEl.setAttribute("data-task-id", taskId);
 
-    actionContainerEl.appendChile(statusSelectEl);
+    actionContainerEl.appendChild(statusSelectEl);
+
+    // Select option array
+    var statusChoices = ["To Do", "In Progress", "Completed"];
+
+    for (i = 0; i < statusChoices.length; i++) {
+        // Create option element
+        var statusOptionEl = document.createElement("Option");
+        statusOptionEl.textContent = statusChoices[i];
+        statusOptionEl.setAttribute("value", statusChoices[i]);
+
+        // Append to select
+        statusSelectEl.appendChild(statusOptionEl);
+    }
 
     return actionContainerEl;
 };
