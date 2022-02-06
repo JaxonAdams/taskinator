@@ -246,7 +246,7 @@ var loadTasks = function() {
     }
 
     // Change string values back into object values
-    tasks = JSON.parse(savedTasks);
+    savedTasks = JSON.parse(savedTasks);
 
     // loop through savedTasks array
     for (var i = 0; i < savedTasks.length; i++) {
