@@ -218,7 +218,7 @@ var taskStatusChangeHandler = function(event) {
     } else if (statusValue === "in progress") {
         tasksInProgressEl.appendChild(taskSelected);
     } else if (statusValue === "completed") {
-        tasksInProgressEl.appendChild(taskSelected);
+        tasksCompletedEl.appendChild(taskSelected);
     }
 
     // Update tasks in the tasks array
